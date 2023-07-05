@@ -1,0 +1,174 @@
+/* Font Styles */
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: lightblue;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container styles */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Primary button styles */
+.btn-primary {
+  background-color: green;
+  color: white;
+}
+
+/* Secondary button styles */
+.btn-secondary {
+  background-color: red;
+  color: white;
+}
+
+/* Heading styles */
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  background-color: #004080;
+  text-align: center;
+  margin-bottom: 20px;
+  margin: 0;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  padding: 10px;
+  background-color: lightblue;
+}
+
+/* Label styles */
+label {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #004080;
+}
+
+/* Form styles */
+form {
+  margin-bottom: 20px;
+  background-color: lightblue;
+}
+
+/* Button container styles */
+.d-flex.justify-content-between {
+  margin-top: 20px;
+  width: 48%;
+}
+
+/* Button styles */
+.btn-primary,
+.btn-secondary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 48%;
+}
+
+/* Button hover styles */
+.btn-primary:hover,
+.btn-secondary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+  width: 48%;
+}
+
+/* Submit and reset button styles */
+button[type="submit"],
+button[type="reset"] {
+  background-color: #004080;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 48%;
+  display: inline-block;
+}
+
+/* Submit and reset button hover styles */
+button[type="submit"]:hover,
+button[type="reset"]:hover {
+  background-color: #003366;
+}
+
+/* Submit button style */
+button[type="submit"] {
+  float: left;
+}
+
+/* Reset button style */
+button[type="reset"] {
+  float: right;
+}
+
+/* Input field styles */
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="email"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Form container styles */
+.form-container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Table styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Table header and data cell styles */
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+/* Table header styles */
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Even table row styles */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Container width */
+.container {
+  width: 80%;
+  margin: auto;
+}

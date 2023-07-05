@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<!-- This is a step-by-step code for creating an application that assists 
+individuals in scheduling an appointment with their pharmacy outlet by getting.
+details from the users and using an Email automated service-->
+
+
+<html>
+    
+<head>
+  
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="style.css">
+  
+   <!-- A pharmacy favicon to make the application more presentable-->
+   
+  <link rel="icon" type="image/x-icon" href="cross.png">
+
+  <title> Pharmacy Appointment Scheduler </title>
+  
+</head>
+
+<!-- creating the body of the application which will involve collecting the necessary details from users -->
+
+<body>
+    
+  <div class="container">
+      
+       <h1 style="color:#004080;text-align:center; background-color:#D3D3D3; border:2px solid DodgerBlue;"><img src="Pharmacy_symbol.png" alt="Pharmacy Symbol" style="height: 32px; vertical-align: middle;"> Pharmacy Appointment Scheduler</h1>
+      
+      <!-- This section contains a form for collecting various details related to an appointment at a pharmacy. Each form group represents a specific field to be filled by the user. -->
+      
+       <h2>
+       
+       <form id="appointment-form" method="post" action="submit.php">
+           
+         <!-- This div contains the form group for the patient's name field. -->   
+        
+        <div class="form-group" color: lightblue;> <br>
+        
+        <!-- Label for the patient's name field -->
+    
+        <label for="patientName"> Patient name:</label> <br>
+        
+         <!-- Input field for the patient's name -->
+         
+        <input type="text" id="patientName" name="patientName" size="70" autofocus placeholder="Enter patient name" required> <br>
+      
+      </div> <br>
+       
+       <!-- Form group for collecting the patient's email address -->
+       
+        <div class="form-group" color: lightblue;>
+        
+        <label for="Patient-email-address"> Patient email address: </label> <br>
+
+        <input type="email" id="Patient-email-address" name="Patient-email-address" size="70" placeholder="Enter patient email address" required> <br>
+        
+      </div> <br>
+        
+        <!-- Form group for collecting the patient's phone number -->
+    
+        <div class="form-group" color: lightblue;>
+        
+        <label for="Patient_Phone_Number"> Patient phone number: </label> <br>
+        
+        <input type="tel" id="Patient_Phone_Number" name="Patient_Phone_Number" placeholder="+xxx-xxx-xxx-xxxx" size="30" required> <br>
+      
+      </div> <br>
+      
+      <!-- Form group for collecting the appointment date -->
+    
+      <div class="form-group" color: lightblue;>
+          
+        <label for="Appointmentdate"> Appointment date: </label> <br>
+        
+        <input type="date" id="Appointmentdate" name="Appointmentdate" size="70" required> <br>
+      
+      </div> <br>
+      
+      <!-- Form group for collecting the scheduled time -->
+    
+      <div class="form-group">
+      
+        <label for="Scheduledtime"> Scheduled time:</label> <br>
+        
+        <input type="time" id="Scheduledtime" name="Scheduledtime" size="70" required> <br>
+        
+      </div> <br>
+      
+      <!-- Form group for selecting the estimated duration at the pharmacy -->
+    
+      <div class="form-group">
+          
+          <label for="Estimated_duration_at_pharmacy">Estimated duration at pharmacy (minutes):</label><br>
+          
+          <select id="Estimated_duration_at_pharmacy" name="Estimated_duration_at_pharmacy" required>
+          
+              <option value="1">1 minute</option>
+          
+              <option value="5">5 minutes</option>
+          
+              <option value="10">10 minutes</option>
+          
+              <option value="15">15 minutes</option>
+          
+              <option value="30">30 minutes</option>
+          
+              <option value="60">60 minutes</option>
+          
+              </select><br>
+          
+              </div><br>
+      
+      <!-- Form group for collecting the pharmacy name -->
+    
+      <div class="form-group">
+        
+        <label for="Pharmacy_name"> Pharmacy name: </label> <br>
+
+        <input type="text" id="Pharmacy_name" name="Pharmacy_name" size="70" placeholder="Enter the name of the pharmacy" required> <br>
+      
+      </div> <br>
+      
+      <!-- Form group for collecting the pharmacy email address -->
+      
+      <div class="form-group" color: lightblue;>
+        
+        <label for="pharmacy_emailaddress"> Pharmacy email address: </label> <br>
+
+        <input type="email" id="pharmacy_emailaddress" name="pharmacy_emailaddress" size="70" placeholder="Enter the pharmacy email address" required> <br>
+        
+      </div> <br>
+        
+        <!-- Form group for collecting the pharmacist name -->
+    
+      <div class="form-group">
+      
+        <label for="Pharmacist_name"> Pharmacist name:</label> <br>
+        
+        <input type="text" id="Pharmacist_name" name="Pharmacist_name" size="70" placeholder="Enter the pharmacist name" required> <br>
+      
+      </div> <br>
+      
+      <!-- Form group for collecting the medications -->
+    
+      <div class="form-group">
+          
+        <label for="medications"> Medications: <br> (Please ensure to separate each medication with a comma)</label> <br>
+        
+        <input type="text" id="medications" name="medications" size="70" placeholder="Enter your medications" required> <br>
+        
+      </div> <br>
+      
+      <!-- Form group for collecting the dosage form -->
+      
+      <div class="form-group">
+          
+        <label for="dosageform"> Dosage form: <br> (Tablets, Capsules, Solutions, Suspensions, Syrups)</label> <br>
+        
+        <input type="text" id="dosageform" name="dosageform" size="70" placeholder="Enter the dosage form" required> <br>
+        
+      </div> <br>
+      
+      <!-- Form group for collecting the route of administration -->
+      
+      <div class="form-group">
+          
+          <label for="route-of-admin"> Route of administration:<br> (Oral, Topical, Inhalation, Intravenous(IV), Intramuscular(IM), Subcutaneous(SC),  Nasal) </label> <br>
+          
+        <input type="text" id="route-of-admin" name="route-of-admin" size="70" placeholder="Enter the route of administration" required> <br>
+        
+      </div> <br>
+      
+      <!-- Form group for collecting the medication strength -->
+      
+      <div class="form-group">
+          
+        <label for="Medication_strength"> Medication strength: <br> (Mg, Mcg, IU, Mls, g) </label> <br>
+        
+        <input type="text" id="Medication_strength" name="Medication_strength" size="70" placeholder="Enter the medication strength" required> <br>
+        
+      </div> <br>
+      
+      <!-- Form group for collecting the medication duration -->
+      
+        <div class="form-group">
+          
+        <label for="duration"> Medication duration: <br> (Days, Weeks, Months (please specify)) </label> <br>
+        
+        <input type="text" id="duration" name="duration" size="70" placeholder="Enter medication duration" required> <br>
+        
+      </div> <br>
+      
+      <!-- Form group for collecting the pharmacy address -->
+      
+      <div class="form-group">
+      
+        <label for="Pharmacyaddress"> Pharmacy address: </label> <br>
+        
+        <input type="text" id="Pharmacyaddress" name="Pharmacyaddress" size="70" placeholder="Enter the pharmacy address" required> <br>
+        
+      </div> <br>
+      
+      <!-- Form group for collecting the pharmacy county -->
+      
+      <div class="form-group">
+          
+        <label for="Pharmacycounty"> Pharmacy county: </label> <br>
+        
+        <input type="text" id="Pharmacycounty" name="Pharmacycounty" size="70" placeholder="Enter the pharmacy county" required> <br>
+      
+      </div> <br>
+      
+      <!-- Form group for collecting the pharmacy country -->
+      
+      <div class="form-group">
+      
+        <label for="Pharmacycountry"> Pharmacy country: </label> <br>
+        
+        <input type="text" id="Pharmacycountry" name="Pharmacycountry" size="70" placeholder="Enter the pharmacy country" required> <br>
+        
+      </div> <br>
+      
+      <!-- Form group for collecting the pharmacy postcode -->
+      
+      <div class="form-group">
+      
+        <label for="Pharmacypostcode"> Pharmacy postcode: </label> <br>
+        
+        <input type="text" id="Pharmacypostcode" name="Pharmacypostcode" size="70" placeholder="Enter the pharmacy postcode" required> <br>
+      
+      </div> <br>
+      
+      <!-- Form group for the submit and reset buttons -->
+
+      <div class="d-flex justify-content-between">
+                    
+                            <input type="submit" value="Submit" class="btn btn-primary">
+                    
+                            <input type="reset" value="Reset" class="btn btn-secondary">
+                    
+                        </div>
+      
+        </form>
+    
+    </h2>
+    
+    </div>
+    
+   
+  <script src="https://apis.google.com/js/api.js"></script>
+ 
+  <script src="script.js"></script>
+
+</body>
+
+</html>
+
+<!-- This form collects information from the user for making an appointment at a pharmacy.
+
+To fill out the form, please provide the following details:
+
+1. Patient name: Enter the name of the patient.
+2. Patient email address: Enter the email address where the appointment confirmation will be sent.
+3. Patient phone number: Enter the phone number where the pharmacy can contact the patient.
+4. Appointment date: Select the desired date for the appointment.
+5. Scheduled time: Enter the preferred time for the appointment.
+6. Estimated duration at pharmacy: Select the estimated duration of the appointment.
+7. Pharmacy name: Enter the name of the pharmacy for the appointment.
+8. Pharmacy email address: Enter the email address of the pharmacy.
+9. Pharmacist name: Enter the name of the pharmacist.
+10. Medications: Enter the medications you need (separate each with a comma).
+11. Dosage form: Enter the dosage form of the medications.
+12. Route of administration: Enter the route of administration for the medications.
+13. Medication strength: Enter the strength of the medications.
+14. Medication duration: Enter the duration of the medication therapy.
+15. Pharmacy address: Enter the address of the pharmacy.
+16. Pharmacy county: Enter the county where the pharmacy is located.
+17. Pharmacy country: Enter the country where the pharmacy is located.
+18. Pharmacy postcode: Enter the postcode of the pharmacy.
+
+Once you have filled out the form, click the "Submit" button to request an appointment. Use the "Reset" button to clear the form if needed.
+
+-->
